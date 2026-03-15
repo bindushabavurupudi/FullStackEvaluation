@@ -22,10 +22,16 @@ function SendMoney() {
     return (
         <div>
             <h2>Send Money</h2>
-            <input placeholder="Receiver Email" onChange={(e) => setReceiverEmail(e.target.value)} />
-            <input placeholder="Amount" onChange={(e) => setAmount(e.target.value)} />
+            <input  placeholder="Receiver Email" onChange={(e) => setReceiverEmail(e.target.value)} />
+            <input type = "number" placeholder="Amount" onChange={(e) => setAmount(e.target.value)} />
             <button onClick={handleTransfer}> Send </button>
-        </div>
+
+            <br />
+            <br />
+            <button onClick={goDashboard}>
+                Go to Dashboard
+            </button>
+        </div> 
     )
 }
 

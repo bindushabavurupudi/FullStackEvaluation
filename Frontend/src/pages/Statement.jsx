@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 function Statement() {
+        const navigate = useNavigate()
+
     const [transactions, setTransactions] = useState([])
     useEffect(() => {
         const fetchTransactions = async () => {
@@ -17,6 +20,12 @@ function Statement() {
         }
         fetchTransactions()
     }, [])
+    const goToSendMoney = () => {
+        navigate("/send")
+    }
+    const goDashboard = () => {
+        navigate("/dashboard")
+    }
 
     return (
         <div>
@@ -42,6 +51,19 @@ function Statement() {
                     ))}
                 </tbody>
             </table>
+
+            <br />
+
+            <button onClick={goToSendMoney}>
+                Send Money
+            </button>
+            <br />
+            <br />
+            <button onClick={goDashboard}>
+                Go to Dashboard
+            </button>
+
+            <br /><br />
         </div>
     )
 }
