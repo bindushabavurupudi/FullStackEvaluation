@@ -1,6 +1,10 @@
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
+
 function SendMoney() {
+    const navigate = useNavigate()
+
     const [receiverEmail, setReceiverEmail] = useState("")
     const [amount, setAmount] = useState("")
     const handleTransfer = async () => {
@@ -19,11 +23,17 @@ function SendMoney() {
             alert("Transfer failed")
         }
     }
+    const goDashboard = () => {
+        navigate("/dashboard")
+    }
+    const goToStatement = () => {
+        navigate("/statement")
+    }
     return (
         <div>
             <h2>Send Money</h2>
-            <input  placeholder="Receiver Email" onChange={(e) => setReceiverEmail(e.target.value)} />
-            <input type = "number" placeholder="Amount" onChange={(e) => setAmount(e.target.value)} />
+            <input placeholder="Receiver Email" onChange={(e) => setReceiverEmail(e.target.value)} />
+            <input type="number" placeholder="Amount" onChange={(e) => setAmount(e.target.value)} />
             <button onClick={handleTransfer}> Send </button>
 
             <br />
@@ -31,7 +41,12 @@ function SendMoney() {
             <button onClick={goDashboard}>
                 Go to Dashboard
             </button>
-        </div> 
+            <br />
+            <br />
+            <button onClick={goToStatement}>
+                Account Statement
+            </button>
+        </div>
     )
 }
 

@@ -13,7 +13,7 @@ function Login() {
                 "http://localhost:5000/api/auth/login",
                 { email, password }
             )
-            login(res.data.token) 
+            login(res.data.token)
             navigate("/dashboard")
         } catch (error) {
             alert("Login failed")

@@ -3,7 +3,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
 function Statement() {
-        const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const [transactions, setTransactions] = useState([])
     useEffect(() => {
