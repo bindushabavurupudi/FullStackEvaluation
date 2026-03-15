@@ -7,7 +7,7 @@ function SendMoney() {
         try {
             await axios.post(
                 "http://localhost:5000/api/account/transfer",
-                { receiverEmail, amount },
+                { receiverEmail, amount: Number(amount) },
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`

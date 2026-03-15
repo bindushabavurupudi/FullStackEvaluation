@@ -17,6 +17,7 @@ function Signup() {
             })
 
             alert("Account created successfully!")
+            navigate("/login")
 
         } catch (error) {
             alert("Signup failed")
