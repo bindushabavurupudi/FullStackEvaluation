@@ -1,5 +1,3 @@
-import AddNote from "./components/AddNote";
-import NotesList from "./components/NotesList";
 
 function App() {
   return (
