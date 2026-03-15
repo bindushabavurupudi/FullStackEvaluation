@@ -1,12 +1,15 @@
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 function Signup() {
-
+    const navigate = useNavigate()
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
+const goToLogin = () => {
+        navigate("/login")
+    }
     const handleSignup = async () => {
 
         try {
@@ -31,6 +34,11 @@ function Signup() {
             <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
             <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
             <button onClick={handleSignup}> Signup </button>
+            <br /><br />
+
+            <button onClick={goToLogin}>
+                Login
+            </button>
 
         </div>
     )
